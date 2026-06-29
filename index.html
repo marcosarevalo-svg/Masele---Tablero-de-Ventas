@@ -7,9 +7,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,sans-serif;font-size:14px;color:#1a1a1a;background:#f5f5f3;padding:0}
+body{font-family:system-ui,sans-serif;font-size:14px;color:#1a1a1a;background:#f5f5f3}
 .container{max-width:1100px;margin:0 auto;padding:20px 24px}
-h3{font-size:11px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
 .header{padding:16px 0 14px;border-bottom:1px solid #e0e0d8;margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .header-left{display:flex;align-items:center;gap:10px}
 .logo{width:34px;height:34px;background:#dbeafe;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#1d4ed8;font-weight:700;font-size:14px}
@@ -25,9 +24,8 @@ h3{font-size:11px;font-weight:600;color:#666;text-transform:uppercase;letter-spa
 .kpi.ok .kpi-value{color:#16a34a}
 .kpi.warn .kpi-value{color:#ca8a04}
 .kpi.danger .kpi-value{color:#dc2626}
-.tabs{display:flex;gap:0;border-bottom:1px solid #e0e0d8;margin-bottom:18px;flex-wrap:wrap}
+.tabs{display:flex;border-bottom:1px solid #e0e0d8;margin-bottom:18px;flex-wrap:wrap}
 .tab{padding:9px 15px;font-size:13px;cursor:pointer;border-bottom:2px solid transparent;color:#666;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit}
-.tab:hover{color:#111}
 .tab.active{color:#1d4ed8;border-bottom-color:#1d4ed8;font-weight:500}
 .panel{display:none}.panel.active{display:block}
 .table-wrap{overflow-x:auto;border-radius:8px;border:1px solid #e0e0d8;margin-bottom:14px;background:#fff}
@@ -45,43 +43,40 @@ td:first-child{text-align:left;font-weight:500}
 .pct-ok{background:#dcfce7;color:#166534}
 .pct-warn{background:#fef9c3;color:#854d0e}
 .pct-bad{background:#fee2e2;color:#991b1b}
-.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:10px;margin-bottom:14px}
-.form-field{display:flex;flex-direction:column;gap:4px}
-.form-field label{font-size:12px;color:#555;font-weight:500}
-.form-field input,.form-field select{font-size:13px;padding:7px 10px;border:1px solid #d0d0c8;border-radius:6px;background:#fff;font-family:inherit;outline:none}
-.form-field input:focus,.form-field select:focus{border-color:#1d4ed8;box-shadow:0 0 0 3px rgba(29,78,216,0.1)}
-.btn{padding:8px 16px;font-size:13px;cursor:pointer;border-radius:6px;font-family:inherit;font-weight:500;transition:all .15s}
+.btn{padding:8px 16px;font-size:13px;cursor:pointer;border-radius:6px;font-family:inherit;font-weight:500}
 .btn-primary{background:#1d4ed8;color:#fff;border:none}
 .btn-primary:hover{background:#1e40af}
 .btn-secondary{background:#fff;color:#111;border:1px solid #c0c0b8}
 .btn-secondary:hover{background:#f5f5f3}
 .btn-success{background:#16a34a;color:#fff;border:none}
 .btn-success:hover{background:#15803d}
-.btn-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.btn-danger-sm{background:none;border:none;color:#dc2626;cursor:pointer;font-size:12px;padding:2px 6px}
-.info-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:10px 14px;font-size:12px;color:#1e40af;margin-bottom:13px}
-textarea{width:100%;font-size:12px;font-family:monospace;padding:10px;min-height:90px;resize:vertical;border:1px solid #d0d0c8;border-radius:6px;background:#fff}
-textarea:focus{border-color:#1d4ed8;outline:none}
-.foot-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:0}
+.btn-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px}
+.foot-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
 .foot-card{background:#fff;border-radius:8px;padding:13px 15px;border:1px solid #e0e0d8}
 .foot-card-title{font-size:11px;color:#888;margin-bottom:6px;font-weight:500}
 .foot-val{font-size:16px;font-weight:600;color:#111}
-.foot-sub{display:flex;gap:16px;margin-top:4px;font-size:11px;color:#888;flex-wrap:wrap;align-items:center}
+.foot-sub{display:flex;gap:16px;margin-top:4px;font-size:11px;color:#888;flex-wrap:wrap}
 .foot-edit{display:flex;align-items:center;gap:6px;margin-top:8px}
-.foot-edit input{font-size:12px;padding:5px 8px;width:150px;border:1px solid #d0d0c8;border-radius:6px;font-family:inherit}
-.save-indicator{font-size:11px;color:#888}
-.save-indicator.saved{color:#16a34a}
-.chart-section{margin-bottom:20px;background:#fff;border-radius:8px;padding:16px;border:1px solid #e0e0d8}
-.chart-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
-.chart-tabs{display:flex;gap:4px}
+.foot-edit input{font-size:12px;padding:5px 8px;width:160px;border:1px solid #d0d0c8;border-radius:6px;font-family:inherit}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:10px;margin-bottom:14px}
+.form-field{display:flex;flex-direction:column;gap:4px}
+.form-field label{font-size:12px;color:#555;font-weight:500}
+.form-field input,.form-field select{font-size:13px;padding:7px 10px;border:1px solid #d0d0c8;border-radius:6px;background:#fff;font-family:inherit}
+.section-card{background:#fff;border-radius:8px;padding:16px;border:1px solid #e0e0d8;margin-bottom:14px}
+.info-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:10px 14px;font-size:12px;color:#1e40af;margin-bottom:13px}
+.success-box{background:#dcfce7;border:1px solid #bbf7d0;border-radius:8px;padding:10px 14px;font-size:12px;color:#166534;margin-bottom:13px}
+.error-box{background:#fee2e2;border:1px solid #fecaca;border-radius:8px;padding:10px 14px;font-size:12px;color:#991b1b;margin-bottom:13px}
+.loading{text-align:center;padding:40px;color:#888;font-size:14px}
+.spinner{display:inline-block;width:20px;height:20px;border:2px solid #e0e0d8;border-top-color:#1d4ed8;border-radius:50%;animation:spin .8s linear infinite;margin-right:8px;vertical-align:middle}
+@keyframes spin{to{transform:rotate(360deg)}}
+.success{color:#16a34a}.danger{color:#dc2626}.warn{color:#ca8a04}
+.chart-section{background:#fff;border-radius:8px;padding:16px;border:1px solid #e0e0d8;margin-bottom:14px}
+.chart-tabs{display:flex;gap:4px;margin-bottom:14px}
 .chart-tab{padding:4px 11px;font-size:12px;cursor:pointer;border-radius:6px;border:1px solid #d0d0c8;background:#fff;color:#555;font-family:inherit}
 .chart-tab.active{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe;font-weight:500}
-.historial-wrap{overflow-x:auto;border-radius:8px;border:1px solid #e0e0d8;background:#fff}
-.historial-table{font-size:12px;min-width:600px;width:100%}
-.empty-state{text-align:center;padding:32px;color:#aaa;font-size:13px}
-.success{color:#16a34a}.danger{color:#dc2626}.warn{color:#ca8a04}
-.config-table{min-width:460px;width:100%}
-.section-card{background:#fff;border-radius:8px;padding:16px;border:1px solid #e0e0d8;margin-bottom:14px}
+.config-table{min-width:460px;width:100%;border-collapse:collapse}
+.btn-danger-sm{background:none;border:none;color:#dc2626;cursor:pointer;font-size:12px;padding:2px 6px}
+h3{font-size:11px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
 </style>
 </head>
 <body>
@@ -92,63 +87,54 @@ textarea:focus{border-color:#1d4ed8;outline:none}
     <div class="logo">M</div>
     <div class="title-block">
       <h1>Colocaciones Masele</h1>
-      <p id="fecha-display">Junio 2025 · Seguimiento diario</p>
+      <p id="fecha-display">Cargando...</p>
     </div>
   </div>
   <div class="header-right">
-    <span class="save-indicator" id="save-ind">✓ Guardado</span>
-    <span class="badge" id="estado-badge">—</span>
+    <span id="ultima-act" style="font-size:11px;color:#888"></span>
+    <span class="badge" id="estado-badge" style="background:#e0e0d8;color:#555">—</span>
+    <button class="btn btn-primary" onclick="cargarDatos()">↺ Actualizar</button>
     <button class="btn btn-success" onclick="exportarCSV()">⬇ Exportar CSV</button>
   </div>
 </div>
 
-<div class="kpi-row" id="kpi-row"></div>
+<div id="kpi-row" class="kpi-row">
+  <div class="kpi"><div class="kpi-label">Estado</div><div class="kpi-value" style="font-size:14px"><span class="spinner"></span>Cargando datos...</div></div>
+</div>
 
 <div class="tabs">
   <button class="tab active" onclick="switchTab('tabla')">Tabla de entidades</button>
   <button class="tab" onclick="switchTab('grafico')">Evolución diaria</button>
-  <button class="tab" onclick="switchTab('carga')">Carga diaria</button>
-  <button class="tab" onclick="switchTab('csv')">Importar sistema</button>
   <button class="tab" onclick="switchTab('config')">Configuración</button>
 </div>
 
 <!-- TABLA -->
 <div id="panel-tabla" class="panel active">
   <div class="table-wrap">
-    <table id="main-table">
+    <table>
       <thead>
         <tr>
           <th rowspan="2" style="text-align:left;vertical-align:bottom">Entidad</th>
           <th colspan="2" style="text-align:center;border-bottom:1px solid #e0e0d8">PE mes</th>
           <th colspan="2" style="text-align:center;border-bottom:1px solid #e0e0d8">Real mes</th>
           <th>%Part.</th><th>Ticket prom.</th><th>PP</th>
-          <th>Interés s/IVA</th><th>TNA pond.</th>
-          <th>Cump.</th><th>Proyección</th><th></th>
+          <th>Interés s/IVA</th><th>TNA pond.</th><th>Cump.</th><th>Proyección</th>
         </tr>
-        <tr>
-          <th>#</th><th>$</th><th>#</th><th>K neto</th>
-          <th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
-        </tr>
+        <tr><th>#</th><th>$</th><th>#</th><th>K neto</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr>
       </thead>
-      <tbody id="table-body"></tbody>
+      <tbody id="table-body"><tr><td colspan="12" class="loading"><span class="spinner"></span>Cargando...</td></tr></tbody>
     </table>
   </div>
   <div class="foot-row">
     <div class="foot-card">
       <div class="foot-card-title">Colocación diaria esperada vs real</div>
       <div class="foot-val" id="col-diaria-real">—</div>
-      <div class="foot-sub">
-        <span>Esperada: <b id="col-diaria-esp">—</b></span>
-        <span id="col-diaria-pct"></span>
-      </div>
+      <div class="foot-sub"><span>Esperada: <b id="col-diaria-esp">—</b></span><span id="col-diaria-pct"></span></div>
     </div>
     <div class="foot-card">
       <div class="foot-card-title">Objetivo propio del equipo</div>
       <div class="foot-val" id="obj-propio-real">—</div>
-      <div class="foot-sub">
-        <span>Meta: <b id="obj-propio-meta">—</b></span>
-        <span id="obj-propio-pct"></span>
-      </div>
+      <div class="foot-sub"><span>Meta: <b id="obj-propio-meta">—</b></span><span id="obj-propio-pct"></span></div>
       <div class="foot-edit">
         <input type="number" id="obj-real-input" placeholder="Real acumulado $">
         <button class="btn btn-secondary" style="font-size:12px;padding:5px 11px" onclick="actualizarObjReal()">Actualizar</button>
@@ -160,7 +146,7 @@ textarea:focus{border-color:#1d4ed8;outline:none}
 <!-- GRÁFICO -->
 <div id="panel-grafico" class="panel">
   <div class="chart-section">
-    <div class="chart-header">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
       <h3>Evolución de capital colocado</h3>
       <div class="chart-tabs">
         <button class="chart-tab active" onclick="switchChart('diario',this)">Diario</button>
@@ -168,93 +154,7 @@ textarea:focus{border-color:#1d4ed8;outline:none}
         <button class="chart-tab" onclick="switchChart('entidades',this)">Por entidad</button>
       </div>
     </div>
-    <div style="position:relative;width:100%;height:300px">
-      <canvas id="chart-main" role="img" aria-label="Evolución de colocaciones"></canvas>
-    </div>
-  </div>
-  <div class="section-card">
-    <h3 style="margin-bottom:12px">Historial de registros</h3>
-    <div class="historial-wrap">
-      <table class="historial-table">
-        <thead>
-          <tr>
-            <th style="text-align:left;padding:7px 10px;background:#f8f8f6;border-bottom:1px solid #e0e0d8">Fecha</th>
-            <th style="text-align:left;padding:7px 10px;background:#f8f8f6;border-bottom:1px solid #e0e0d8">Entidad</th>
-            <th style="text-align:right;padding:7px 10px;background:#f8f8f6;border-bottom:1px solid #e0e0d8">#</th>
-            <th style="text-align:right;padding:7px 10px;background:#f8f8f6;border-bottom:1px solid #e0e0d8">K neto</th>
-            <th style="text-align:right;padding:7px 10px;background:#f8f8f6;border-bottom:1px solid #e0e0d8">PP</th>
-            <th style="text-align:right;padding:7px 10px;background:#f8f8f6;border-bottom:1px solid #e0e0d8">TNA</th>
-            <th style="padding:7px 10px;background:#f8f8f6;border-bottom:1px solid #e0e0d8"></th>
-          </tr>
-        </thead>
-        <tbody id="hist-body"></tbody>
-      </table>
-    </div>
-  </div>
-</div>
-
-<!-- CARGA -->
-<div id="panel-carga" class="panel">
-  <div class="section-card">
-    <div class="info-box">Completá los datos de la jornada. Los acumulados por entidad se suman automáticamente y quedan guardados en tu navegador.</div>
-    <div class="form-grid">
-      <div class="form-field"><label>Entidad</label><select id="f-entidad"></select></div>
-      <div class="form-field"><label>Fecha</label><input type="date" id="f-fecha"></div>
-      <div class="form-field"><label>Operaciones (#)</label><input type="number" id="f-ops" placeholder="0" min="0"></div>
-      <div class="form-field"><label>Capital neto ($)</label><input type="number" id="f-kneto" placeholder="0"></div>
-      <div class="form-field"><label>Plazo promedio (días)</label><input type="number" id="f-pp" placeholder="0"></div>
-      <div class="form-field"><label>Interés s/IVA ($)</label><input type="number" id="f-interes" placeholder="0"></div>
-      <div class="form-field"><label>TNA (%)</label><input type="number" id="f-tna" placeholder="0" step="0.01"></div>
-    </div>
-    <div class="btn-row">
-      <button class="btn btn-primary" onclick="registrarCarga()">Registrar liquidación</button>
-      <button class="btn btn-secondary" onclick="limpiarForm()">Limpiar</button>
-    </div>
-    <div id="carga-msg" style="margin-top:10px;font-size:12px"></div>
-  </div>
-</div>
-
-<!-- IMPORTAR SISTEMA -->
-<div id="panel-csv" class="panel">
-  <div class="section-card">
-    <div class="info-box">
-      Importá el archivo <b>Document.xlsx</b> que exporta tu sistema diariamente. El tablero lee las columnas <b>Entidad · Neto · Tasa · Plazo · Interés</b> y acumula las operaciones del día según la fecha de operación.
-    </div>
-    <div class="form-grid" style="max-width:400px;margin-bottom:14px">
-      <div class="form-field">
-        <label>Fecha del archivo (se detecta automáticamente)</label>
-        <input type="date" id="csv-fecha-override" placeholder="Dejar vacío para detectar">
-      </div>
-      <div class="form-field">
-        <label>Modo de importación</label>
-        <select id="csv-modo">
-          <option value="acumular">Acumular al total existente</option>
-          <option value="reemplazar">Reemplazar todo el mes</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-field" style="margin-bottom:14px">
-      <label>Seleccionar archivo Document.xlsx</label>
-      <input type="file" id="xlsx-file" accept=".xlsx,.xls" style="margin-top:6px;font-size:13px">
-    </div>
-    <div class="btn-row">
-      <button class="btn btn-primary" onclick="importarXLSX()">Importar archivo del sistema</button>
-      <button class="btn btn-secondary" onclick="document.getElementById('xlsx-file').value=''">Limpiar</button>
-    </div>
-    <div id="csv-msg" style="margin-top:10px;font-size:12px"></div>
-    <div id="csv-preview" style="margin-top:14px;display:none">
-      <h3 style="margin-bottom:8px">Vista previa de importación</h3>
-      <div style="overflow-x:auto;border-radius:8px;border:1px solid #e0e0d8">
-        <table id="csv-preview-table" style="width:100%;border-collapse:collapse;font-size:12px;min-width:600px">
-          <thead><tr id="csv-preview-head"></tr></thead>
-          <tbody id="csv-preview-body"></tbody>
-        </table>
-      </div>
-      <div class="btn-row" style="margin-top:10px">
-        <button class="btn btn-primary" onclick="confirmarImportacion()">Confirmar e importar</button>
-        <button class="btn btn-secondary" onclick="cancelarImportacion()">Cancelar</button>
-      </div>
-    </div>
+    <div style="position:relative;width:100%;height:300px"><canvas id="chart-main"></canvas></div>
   </div>
 </div>
 
@@ -263,19 +163,17 @@ textarea:focus{border-color:#1d4ed8;outline:none}
   <div class="section-card">
     <h3>Presupuesto mensual (PE) por entidad</h3>
     <div style="overflow-x:auto;margin-top:10px">
-      <table class="config-table" style="border-collapse:collapse">
-        <thead>
-          <tr>
-            <th style="text-align:left;padding:7px 10px;background:#f8f8f6;border:1px solid #e0e0d8">Entidad</th>
-            <th style="text-align:right;padding:7px 10px;background:#f8f8f6;border:1px solid #e0e0d8"># PE</th>
-            <th style="text-align:right;padding:7px 10px;background:#f8f8f6;border:1px solid #e0e0d8">$ PE</th>
-            <th style="padding:7px 10px;background:#f8f8f6;border:1px solid #e0e0d8"></th>
-          </tr>
-        </thead>
+      <table class="config-table">
+        <thead><tr>
+          <th style="text-align:left;padding:7px 10px;background:#f8f8f6;border:1px solid #e0e0d8">Entidad</th>
+          <th style="text-align:right;padding:7px 10px;background:#f8f8f6;border:1px solid #e0e0d8"># PE</th>
+          <th style="text-align:right;padding:7px 10px;background:#f8f8f6;border:1px solid #e0e0d8">$ PE</th>
+          <th style="padding:7px 10px;background:#f8f8f6;border:1px solid #e0e0d8"></th>
+        </tr></thead>
         <tbody id="config-body"></tbody>
       </table>
     </div>
-    <div class="btn-row" style="margin-top:12px">
+    <div class="btn-row">
       <button class="btn btn-secondary" onclick="agregarEntidad()">+ Agregar entidad</button>
     </div>
   </div>
@@ -292,458 +190,35 @@ textarea:focus{border-color:#1d4ed8;outline:none}
       </div>
       <div class="form-field"><label>Año</label>
         <select id="cfg-anio" onchange="previsualizarDias()">
-          <option value="2025">2025</option>
-          <option value="2026">2026</option>
+          <option value="2025">2025</option><option value="2026" selected>2026</option>
         </select>
       </div>
-      <div class="form-field"><label>Objetivo propio — meta ($)</label><input type="number" id="cfg-obj-propio" value="140000000"></div>
-      <div class="form-field"><label>Objetivo propio — real acumulado ($)</label><input type="number" id="cfg-obj-real" value="97200000"></div>
+      <div class="form-field"><label>Objetivo propio — meta ($)</label><input type="number" id="cfg-obj-propio"></div>
+      <div class="form-field"><label>Objetivo propio — real ($)</label><input type="number" id="cfg-obj-real-cfg"></div>
     </div>
-    <div style="background:#f8f8f6;border-radius:8px;border:1px solid #e0e0d8;padding:10px 14px;margin-top:10px;font-size:13px" id="dias-hab-preview">
+    <div style="background:#f8f8f6;border-radius:8px;border:1px solid #e0e0d8;padding:10px 14px;margin-top:10px;font-size:13px">
       <span id="dias-hab-info">—</span>
     </div>
-    <div class="btn-row" style="margin-top:14px">
+    <div class="btn-row">
       <button class="btn btn-primary" onclick="guardarConfig()">Guardar configuración</button>
-      <button class="btn btn-secondary" onclick="if(confirm('¿Reiniciar datos reales de entidades e historial? El PE se mantiene.'))resetReal()">Reiniciar datos reales</button>
     </div>
+  </div>
+  <div class="section-card">
+    <h3>Fuente de datos</h3>
+    <div class="info-box">Los datos se leen automáticamente desde tu Google Sheet cada vez que se abre o actualiza el tablero. Para cargar datos nuevos, pegá el archivo del sistema en la Sheet y hacé click en "Actualizar".</div>
+    <a href="https://docs.google.com/spreadsheets/d/1SKb40QVwGs5OOqxc_jALu15ypLtwGH2oTMQBPT1Qf0o/edit" target="_blank" class="btn btn-secondary">Abrir Google Sheet →</a>
   </div>
 </div>
 
-</div><!-- /container -->
+</div>
 
 <script>
-const STORE_KEY = 'masele_tablero_v4';
-let chartInst = null, chartMode = 'diario';
+// ===== CONFIGURACIÓN =====
+const SHEET_ID = '1SKb40QVwGs5OOqxc_jALu15ypLtwGH2oTMQBPT1Qf0o';
+const SHEET_NAME = 'Datos';
+const STORE_KEY = 'masele_config_v1';
 
-const defaultData = {
-  mes: 'Junio 2026', diasHabiles: 21, diasTranscurridos: 19,
-  objPropio: 140000000, objPropioReal: 97200000,
-  entidades: [
-    {nombre:'APL',peOps:144,peMonto:100000000,ops:147,kneto:109450000,pp:7,interes:151244966,tna:266,neto_tna:29076879475,neto_plazo:982150000},
-    {nombre:'S.U.E',peOps:200,peMonto:50000000,ops:233,kneto:90950000,pp:3,interes:100186512,tna:218,neto_tna:19864356148,neto_plazo:882950000},
-    {nombre:'AMSURRBAC',peOps:131,peMonto:150000000,ops:116,kneto:126950000,pp:9,interes:120820715,tna:171,neto_tna:21759287608,neto_plazo:1246200000},
-    {nombre:'UEJ',peOps:160,peMonto:50000000,ops:20,kneto:63500000,pp:15,interes:80816599,tna:137,neto_tna:8705589015,neto_plazo:1009800000},
-    {nombre:'UDAP',peOps:0,peMonto:0,ops:1,kneto:450000,pp:6,interes:381767,tna:247,neto_tna:110958903,neto_plazo:2700000},
-    {nombre:'30 de Octubre',peOps:0,peMonto:0,ops:1,kneto:950000,pp:18,interes:1633144,tna:158,neto_tna:149917809,neto_plazo:17100000},
-    {nombre:'3 de Abril',peOps:29,peMonto:30000000,ops:29,kneto:27900000,pp:12,interes:33610421,tna:176,neto_tna:4898169868,neto_plazo:331200000},
-    {nombre:'Mut. Pol. Cba.',peOps:255,peMonto:370000000,ops:250,kneto:370350000,pp:13,interes:586620252,tna:193,neto_tna:71364920273,neto_plazo:5124450000}
-  ],
-  historial: []
-};
-
-let data = JSON.parse(JSON.stringify(defaultData));
-
-function loadData() {
-  try {
-    const s = localStorage.getItem(STORE_KEY);
-    if (s) data = JSON.parse(s);
-  } catch(e) {}
-}
-
-function saveData() {
-  try {
-    localStorage.setItem(STORE_KEY, JSON.stringify(data));
-    const ind = document.getElementById('save-ind');
-    ind.textContent = '✓ Guardado'; ind.className = 'save-indicator saved';
-  } catch(e) {
-    document.getElementById('save-ind').textContent = '⚠ Error al guardar';
-  }
-}
-
-function fmt(n) { if (!n && n !== 0) return '—'; return '$' + Math.round(n).toLocaleString('es-AR'); }
-function fmtN(n) { return (n || 0).toLocaleString('es-AR'); }
-function pct(a, b) { if (!b) return null; return Math.round(a / b * 100); }
-function pilCls(p) { if (p === null) return ''; if (p >= 100) return 'pct-ok'; if (p >= 80) return 'pct-warn'; return 'pct-bad'; }
-
-function calcTotals() {
-  let t = {peOps:0, peMonto:0, ops:0, kneto:0, interes:0, neto_tna:0, neto_plazo:0};
-  data.entidades.forEach(e => {
-    t.peOps+=e.peOps; t.peMonto+=e.peMonto; t.ops+=e.ops; t.kneto+=e.kneto;
-    t.interes+=e.interes;
-    t.neto_tna+=(e.neto_tna||e.kneto*e.tna);
-    t.neto_plazo+=(e.neto_plazo||e.kneto*e.pp);
-  });
-  return t;
-}
-
-function renderKPI() {
-  const tot = calcTotals();
-  const av = pct(tot.kneto, tot.peMonto);
-  const tTNA = tot.kneto ? Math.round(tot.neto_tna / tot.kneto) : 0;
-  const tPP  = tot.kneto ? Math.round(tot.neto_plazo / tot.kneto) : 0;
-  const ticket = tot.ops ? Math.round(tot.kneto / tot.ops) : 0;
-  const opAv = pct(data.objPropioReal, data.objPropio);
-  const kpis = [
-    {label:'Capital colocado', val:fmt(tot.kneto), sub:'Meta: '+fmt(tot.peMonto), cls:av>=100?'ok':av>=80?'warn':'danger'},
-    {label:'Operaciones', val:fmtN(tot.ops), sub:'Meta: '+fmtN(tot.peOps)+' ops', cls:''},
-    {label:'Cumplimiento general', val:av!==null?(av+'%'):'—', sub:data.diasTranscurridos+' de '+data.diasHabiles+' días hábiles', cls:av>=100?'ok':av>=80?'warn':'danger'},
-    {label:'TNA pond. s/IVA', val:tTNA+'%', sub:'Promedio ponderado', cls:''},
-    {label:'Plazo pond. (PP)', val:tPP+' cuotas', sub:'Promedio ponderado por capital', cls:''},
-    {label:'Obj. equipo', val:fmt(data.objPropioReal), sub:'Meta: '+fmt(data.objPropio), cls:opAv>=100?'ok':opAv>=80?'warn':'danger'}
-  ];
-  document.getElementById('kpi-row').innerHTML = kpis.map(k =>
-    `<div class="kpi ${k.cls}"><div class="kpi-label">${k.label}</div><div class="kpi-value">${k.val}</div><div class="kpi-sub">${k.sub}</div></div>`
-  ).join('');
-  const b = document.getElementById('estado-badge');
-  const a = av || 0;
-  b.textContent = a>=100 ? 'Meta alcanzada' : a>=80 ? ('Avance '+a+'%') : ('Rezagado '+a+'%');
-  b.style.cssText = a>=100 ? 'background:#dcfce7;color:#166534' : a>=80 ? 'background:#fef9c3;color:#854d0e' : 'background:#fee2e2;color:#991b1b';
-  document.getElementById('fecha-display').textContent = data.mes + ' · Seguimiento diario';
-}
-
-function renderTabla() {
-  const tot = calcTotals();
-  const trans = data.diasTranscurridos, dias = data.diasHabiles;
-  let rows = '';
-  data.entidades.forEach((e, i) => {
-    const ticket = e.ops ? Math.round(e.kneto / e.ops) : 0;
-    const av = pct(e.kneto, e.peMonto);
-    const pctP = tot.kneto ? Math.round(e.kneto / tot.kneto * 100) : 0;
-    const proy = trans ? Math.round((e.kneto / trans) * dias) : 0;
-    rows += `<tr>
-      <td>${e.nombre}</td><td>${e.peOps||'—'}</td><td>${e.peMonto?fmt(e.peMonto):'$0'}</td>
-      <td>${e.ops}</td><td>${fmt(e.kneto)}</td><td>${pctP}%</td>
-      <td>${ticket?fmt(ticket):'—'}</td><td>${e.pp||'—'}</td>
-      <td>${fmt(e.interes)}</td><td>${e.tna?e.tna+'%':'—'}</td>
-      <td>${av!==null?`<span class="pct-pill ${pilCls(av)}">${av}%</span>`:'<span style="color:#aaa">—</span>'}</td>
-      <td>${trans?fmt(proy):'—'}</td>
-      <td><button class="btn-danger-sm" onclick="eliminarEntidad(${i})">✕</button></td>
-    </tr>`;
-  });
-  const tTNA  = tot.kneto ? Math.round(tot.neto_tna / tot.kneto) : 0;
-  const tPP   = tot.kneto ? Math.round(tot.neto_plazo / tot.kneto) : 0;
-  const tProy = trans ? Math.round((tot.kneto/trans)*dias) : 0;
-  const tAv   = pct(tot.kneto, tot.peMonto);
-  rows += `<tr class="total-row">
-    <td>Total</td><td>${tot.peOps}</td><td>${fmt(tot.peMonto)}</td>
-    <td>${tot.ops}</td><td>${fmt(tot.kneto)}</td><td>100%</td>
-    <td>${fmt(tot.ops?Math.round(tot.kneto/tot.ops):0)}</td><td>${tPP}</td>
-    <td>${fmt(tot.interes)}</td><td>${tTNA}%</td>
-    <td>${tAv!==null?`<span class="pct-pill ${pilCls(tAv)}">${tAv}%</span>`:'—'}</td>
-    <td>${fmt(tProy)}</td><td></td>
-  </tr>`;
-  document.getElementById('table-body').innerHTML = rows;
-
-  const esp = dias ? Math.round(tot.peMonto/dias) : 0;
-  const real = trans ? Math.round(tot.kneto/trans) : 0;
-  const cp = pct(real, esp);
-  document.getElementById('col-diaria-real').textContent = fmt(real);
-  document.getElementById('col-diaria-esp').textContent = fmt(esp);
-  const cpEl = document.getElementById('col-diaria-pct');
-  cpEl.textContent = cp!==null ? (cp+'% vs esperado') : '';
-  cpEl.className = cp>=100?'success':cp>=80?'warn':'danger';
-
-  const op = pct(data.objPropioReal, data.objPropio);
-  document.getElementById('obj-propio-real').textContent = fmt(data.objPropioReal);
-  document.getElementById('obj-propio-meta').textContent = fmt(data.objPropio);
-  document.getElementById('obj-real-input').value = data.objPropioReal || '';
-  const opEl = document.getElementById('obj-propio-pct');
-  opEl.textContent = op!==null ? (op+'% alcanzado') : '';
-  opEl.className = op>=100?'success':op>=80?'warn':'danger';
-}
-
-function actualizarObjReal() {
-  const val = +document.getElementById('obj-real-input').value;
-  if (!val && val !== 0) return;
-  data.objPropioReal = val;
-  saveData(); render();
-}
-
-function renderHistorial() {
-  const h = data.historial || [];
-  if (!h.length) {
-    document.getElementById('hist-body').innerHTML = '<tr><td colspan="7" class="empty-state">Sin registros todavía. Cargá datos desde "Carga diaria".</td></tr>';
-    return;
-  }
-  document.getElementById('hist-body').innerHTML = [...h].reverse().map((r, ri) => `<tr style="border-bottom:1px solid #f0f0e8">
-    <td style="text-align:left;padding:6px 10px">${r.fecha||'—'}</td>
-    <td style="text-align:left;padding:6px 10px">${r.entidad}</td>
-    <td style="text-align:right;padding:6px 10px">${r.ops}</td>
-    <td style="text-align:right;padding:6px 10px">${fmt(r.kneto)}</td>
-    <td style="text-align:right;padding:6px 10px">${r.pp||'—'}</td>
-    <td style="text-align:right;padding:6px 10px">${r.tna?r.tna+'%':'—'}</td>
-    <td style="padding:6px 10px"><button class="btn-danger-sm" onclick="eliminarHistorial(${h.length-1-ri})">✕</button></td>
-  </tr>`).join('');
-}
-
-function renderGrafico() {
-  if (!window.Chart) return;
-  const h = data.historial || [];
-  const ctx = document.getElementById('chart-main').getContext('2d');
-  if (chartInst) { chartInst.destroy(); chartInst = null; }
-  if (chartMode === 'diario') {
-    const byF = {}; h.forEach(r => { byF[r.fecha] = (byF[r.fecha]||0) + r.kneto; });
-    const labels = Object.keys(byF).sort();
-    chartInst = new Chart(ctx, {type:'bar', data:{labels:labels.length?labels:['Sin datos'], datasets:[{label:'Capital (M$)', data:labels.map(l => Math.round(byF[l]/1000000*100)/100), backgroundColor:'#2a78d6', borderRadius:4}]}, options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{y:{ticks:{callback:v=>'$'+v+'M'}}}}});
-  } else if (chartMode === 'acumulado') {
-    const byF = {}; h.forEach(r => { byF[r.fecha] = (byF[r.fecha]||0) + r.kneto; });
-    const labels = Object.keys(byF).sort(); let acc = 0;
-    const tot = calcTotals(); const meta = tot.peMonto/1000000;
-    chartInst = new Chart(ctx, {type:'line', data:{labels:labels.length?labels:['Sin datos'], datasets:[
-      {label:'Acumulado (M$)', data:labels.map(l => { acc+=byF[l]; return Math.round(acc/1000000*100)/100; }), borderColor:'#2a78d6', backgroundColor:'rgba(42,120,214,0.08)', borderWidth:2, tension:0.3, pointRadius:4},
-      {label:'Meta (M$)', data:labels.map(()=>Math.round(meta*100)/100), borderColor:'#dc2626', borderDash:[5,4], borderWidth:1.5, pointRadius:0}
-    ]}, options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:true, labels:{boxWidth:10, font:{size:11}}}}, scales:{y:{ticks:{callback:v=>'$'+v+'M'}}}}});
-  } else {
-    const byE = {}; h.forEach(r => { byE[r.entidad] = (byE[r.entidad]||0) + r.kneto; });
-    const labels = Object.keys(byE);
-    const colors = ['#2a78d6','#1baf7a','#eda100','#008300','#4a3aa7','#e34948','#e87ba4','#eb6834'];
-    chartInst = new Chart(ctx, {type:'bar', data:{labels:labels.length?labels:['Sin datos'], datasets:[{label:'Capital (M$)', data:labels.map(l=>Math.round(byE[l]/1000000*100)/100), backgroundColor:labels.map((_,i)=>colors[i%colors.length]), borderRadius:4}]}, options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{y:{ticks:{callback:v=>'$'+v+'M'}}}}});
-  }
-  renderHistorial();
-}
-
-function switchChart(mode, el) {
-  chartMode = mode;
-  document.querySelectorAll('.chart-tab').forEach(b => b.classList.remove('active'));
-  el.classList.add('active');
-  renderGrafico();
-}
-
-function renderConfig() {
-  document.getElementById('config-body').innerHTML = data.entidades.map((e,i) => `<tr>
-    <td style="border:1px solid #e0e0d8;padding:5px 8px"><input type="text" value="${e.nombre}" onchange="data.entidades[${i}].nombre=this.value" style="width:130px;font-size:12px;padding:4px 6px;border:1px solid #d0d0c8;border-radius:4px;font-family:inherit"></td>
-    <td style="border:1px solid #e0e0d8;padding:5px 8px;text-align:right"><input type="number" value="${e.peOps}" onchange="data.entidades[${i}].peOps=+this.value" style="width:70px;font-size:12px;padding:4px 6px;border:1px solid #d0d0c8;border-radius:4px;font-family:inherit;text-align:right"></td>
-    <td style="border:1px solid #e0e0d8;padding:5px 8px;text-align:right"><input type="number" value="${e.peMonto}" onchange="data.entidades[${i}].peMonto=+this.value" style="width:130px;font-size:12px;padding:4px 6px;border:1px solid #d0d0c8;border-radius:4px;font-family:inherit;text-align:right"></td>
-    <td style="border:1px solid #e0e0d8;padding:5px 8px"><button class="btn-danger-sm" onclick="eliminarEntidad(${i})">✕</button></td>
-  </tr>`).join('');
-  // Sincronizar selectores de mes/año con data.mes
-  const partes = (data.mes || 'Junio 2026').split(' ');
-  const mesIdx = MESES_ES.indexOf(partes[0]);
-  const anio = parseInt(partes[1]) || 2026;
-  if (document.getElementById('cfg-mes-num')) {
-    document.getElementById('cfg-mes-num').value = mesIdx >= 0 ? mesIdx : 5;
-    document.getElementById('cfg-anio').value = anio;
-  }
-  document.getElementById('cfg-obj-propio').value = data.objPropio;
-  document.getElementById('cfg-obj-real').value = data.objPropioReal || 97200000;
-  previsualizarDias();
-}
-
-function renderSelect() {
-  document.getElementById('f-entidad').innerHTML = data.entidades.map(e => `<option value="${e.nombre}">${e.nombre}</option>`).join('');
-}
-
-function render() {
-  renderKPI(); renderTabla(); renderConfig(); renderSelect();
-  if (document.getElementById('panel-grafico').classList.contains('active')) renderGrafico();
-}
-
-function switchTab(t) {
-  const tabs = ['tabla','grafico','carga','csv','config'];
-  document.querySelectorAll('.tab').forEach((b,i) => b.classList.toggle('active', tabs[i]===t));
-  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-  document.getElementById('panel-'+t).classList.add('active');
-  if (t === 'grafico') renderGrafico();
-}
-
-function registrarCarga() {
-  const nombre = document.getElementById('f-entidad').value;
-  const fecha = document.getElementById('f-fecha').value || new Date().toISOString().slice(0,10);
-  const ops = +document.getElementById('f-ops').value || 0;
-  const kneto = +document.getElementById('f-kneto').value || 0;
-  const pp = +document.getElementById('f-pp').value || 0;
-  const interes = +document.getElementById('f-interes').value || 0;
-  const tna = +document.getElementById('f-tna').value || 0;
-  if (!ops && !kneto) { document.getElementById('carga-msg').innerHTML = '<span class="danger">Ingresá operaciones o capital.</span>'; return; }
-  const idx = data.entidades.findIndex(e => e.nombre === nombre);
-  if (idx >= 0) {
-    const e = data.entidades[idx];
-    const tot = e.ops + ops;
-    if (pp && tot) e.pp = Math.round((e.pp*e.ops + pp*ops) / tot);
-    e.ops += ops; e.kneto += kneto; e.interes += interes;
-    if (tna) { e.tna = tna; }
-    e.neto_tna = (e.neto_tna || 0) + kneto * tna;
-    e.neto_plazo = (e.neto_plazo || 0) + kneto * pp;
-  }
-  if (!data.historial) data.historial = [];
-  data.historial.push({fecha, entidad:nombre, ops, kneto, pp, interes, tna});
-  limpiarForm(); saveData(); render();
-  document.getElementById('carga-msg').innerHTML = '<span class="success">✓ Registrado para '+nombre+' ('+fecha+')</span>';
-  setTimeout(() => document.getElementById('carga-msg').textContent = '', 3000);
-}
-
-function limpiarForm() {
-  ['f-ops','f-kneto','f-pp','f-interes','f-tna'].forEach(id => document.getElementById(id).value = '');
-  document.getElementById('f-fecha').value = new Date().toISOString().slice(0,10);
-}
-
-function importarCSV() {
-  const txt = document.getElementById('csv-input').value.trim();
-  if (!txt) { document.getElementById('csv-msg').textContent = 'Sin datos.'; return; }
-  const lines = txt.split('\n').filter(l => l.trim());
-  let ok = 0, skip = 0;
-  lines.slice(1).forEach(line => {
-    const cols = line.split('\t'); if (cols.length < 2) return;
-    const nombre = cols[0].trim();
-    const ops = parseFloat(cols[1]) || 0;
-    const kneto = parseFloat((cols[2]||'').replace(/[$.]/g,'').replace(',','.')) || 0;
-    const pp = parseFloat(cols[3]) || 0;
-    const interes = parseFloat((cols[4]||'').replace(/[$.]/g,'').replace(',','.')) || 0;
-    const tna = parseFloat(cols[5]) || 0;
-    const idx = data.entidades.findIndex(e => e.nombre === nombre);
-    if (idx >= 0) {
-      const e = data.entidades[idx]; const tot = e.ops+ops;
-      if (pp && tot) e.pp = Math.round((e.pp*e.ops+pp*ops)/tot);
-      e.ops+=ops; e.kneto+=kneto; e.interes+=interes; if(tna) e.tna=tna;
-      if (!data.historial) data.historial = [];
-      data.historial.push({fecha:new Date().toISOString().slice(0,10), entidad:nombre, ops, kneto, pp, interes, tna});
-      ok++;
-    } else skip++;
-  });
-  document.getElementById('csv-msg').innerHTML = `<span class="success">${ok} filas importadas</span>${skip?` · <span class="warn">${skip} sin coincidencia</span>`:''}`;
-  saveData(); render();
-}
-
-// ===== DÍAS HÁBILES ARGENTINA =====
-// Feriados nacionales 2025 y 2026 (inamovibles + trasladables + puentes oficiales)
-const FERIADOS = {
-  2025: ['2025-01-01','2025-03-03','2025-03-04','2025-03-24','2025-04-02','2025-04-18',
-         '2025-05-01','2025-05-25','2025-06-16','2025-06-20','2025-07-09','2025-08-18',
-         '2025-10-12','2025-11-21','2025-12-08','2025-12-25'],
-  2026: ['2026-01-01','2026-02-16','2026-02-17','2026-03-23','2026-03-24',
-         '2026-04-02','2026-04-03','2026-05-01','2026-05-25','2026-06-15','2026-06-20',
-         '2026-07-09','2026-07-10','2026-08-17','2026-10-12','2026-11-23',
-         '2026-12-07','2026-12-08','2026-12-25']
-};
-
-const MESES_ES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
-
-function calcDiasHabiles(anio, mes) {
-  const feriados = new Set((FERIADOS[anio] || []).filter(f => {
-    const d = new Date(f + 'T12:00:00');
-    return d.getFullYear() === anio && d.getMonth() === mes;
-  }));
-  const hoy = new Date();
-  const ayer = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate() - 1);
-  let total = 0, transcurridos = 0;
-  const diasEnMes = new Date(anio, mes + 1, 0).getDate();
-  for (let d = 1; d <= diasEnMes; d++) {
-    const fecha = new Date(anio, mes, d);
-    const dow = fecha.getDay();
-    if (dow === 0 || dow === 6) continue; // fin de semana
-    const iso = `${anio}-${String(mes+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-    if (feriados.has(iso)) continue; // feriado
-    total++;
-    if (fecha <= ayer) transcurridos++;
-  }
-  return { total, transcurridos };
-}
-
-function previsualizarDias() {
-  const mes = +document.getElementById('cfg-mes-num').value;
-  const anio = +document.getElementById('cfg-anio').value;
-  const { total, transcurridos } = calcDiasHabiles(anio, mes);
-  const restantes = total - transcurridos;
-  document.getElementById('dias-hab-info').innerHTML =
-    `<b>${MESES_ES[mes]} ${anio}</b> — Días hábiles: <b>${total}</b> totales · <b>${transcurridos}</b> transcurridos · <b>${restantes}</b> restantes`;
-}
-
-function guardarConfig() {
-  const mes = +document.getElementById('cfg-mes-num').value;
-  const anio = +document.getElementById('cfg-anio').value;
-  const { total, transcurridos } = calcDiasHabiles(anio, mes);
-  data.mes = MESES_ES[mes] + ' ' + anio;
-  data.diasHabiles = total;
-  data.diasTranscurridos = transcurridos;
-  data.objPropio = +document.getElementById('cfg-obj-propio').value || 0;
-  data.objPropioReal = +document.getElementById('cfg-obj-real').value || 0;
-  saveData(); render(); switchTab('tabla');
-}
-
-function agregarEntidad() {
-  data.entidades.push({nombre:'Nueva entidad', peOps:0, peMonto:0, ops:0, kneto:0, pp:0, interes:0, tna:0});
-  render();
-}
-
-function eliminarEntidad(i) {
-  if (confirm('¿Eliminar '+data.entidades[i].nombre+'?')) { data.entidades.splice(i,1); saveData(); render(); }
-}
-
-function eliminarHistorial(i) {
-  if (confirm('¿Eliminar este registro?')) { data.historial.splice(i,1); saveData(); render(); }
-}
-
-function resetReal() {
-  data.entidades.forEach(e => { e.ops=0; e.kneto=0; e.interes=0; e.pp=0; e.tna=0; });
-  data.historial = []; saveData(); render();
-}
-
-function exportarCSV() {
-  const tot = calcTotals();
-  const trans = data.diasTranscurridos, dias = data.diasHabiles;
-  const tTNA = tot.kneto ? Math.round(tot.neto_tna / tot.kneto) : 0;
-  const tPP  = tot.kneto ? Math.round(tot.neto_plazo / tot.kneto) : 0;
-  const tProy = trans ? Math.round((tot.kneto/trans)*dias) : 0;
-  const tAv = tot.peMonto ? Math.round(tot.kneto/tot.peMonto*100) : null;
-
-  const cols = ['Entidad','PE #','PE $','Real #','K neto','% Part.','Ticket prom.','PP','Interés s/IVA','TNA','Cumplimiento','Proyección'];
-  const esc = v => '"'+String(v==null?'':v).replace(/"/g,'""')+'"';
-  
-  let csv = cols.map(esc).join(';') + '\n';
-  data.entidades.forEach(e => {
-    const ticket = e.ops ? Math.round(e.kneto/e.ops) : 0;
-    const av = e.peMonto ? Math.round(e.kneto/e.peMonto*100) : null;
-    const pctP = tot.kneto ? Math.round(e.kneto/tot.kneto*100) : 0;
-    const proy = trans ? Math.round((e.kneto/trans)*dias) : 0;
-    csv += [e.nombre, e.peOps||0, e.peMonto||0, e.ops||0, e.kneto||0, pctP+'%', ticket||0, e.pp||0, e.interes||0, (e.tna||0)+'%', av!==null?(av+'%'):'', proy||0].map(esc).join(';') + '\n';
-  });
-  csv += ['TOTAL', tot.peOps, tot.peMonto, tot.ops, tot.kneto, '100%', tot.ops?Math.round(tot.kneto/tot.ops):0, tPP, tot.interes, tTNA+'%', tAv!==null?(tAv+'%'):'', tProy].map(esc).join(';') + '\n';
-  csv += '\n';
-  csv += [esc('Objetivo propio — meta'),'','','','',esc(+(data.objPropio)||0)].join(';') + '\n';
-  csv += [esc('Objetivo propio — real'),'','','','',esc(+(data.objPropioReal)||0)].join(';') + '\n';
-  const pctObj = (+data.objPropio) ? Math.round((+data.objPropioReal)/(+data.objPropio)*100) : 0;
-  csv += [esc('Objetivo propio — %'),'','','','',esc(pctObj+'%')].join(';') + '\n';
-
-  if (data.historial && data.historial.length) {
-    csv += '\n' + ['Fecha','Entidad','Operaciones','K neto','PP','Interés s/IVA','TNA'].map(esc).join(';') + '\n';
-    data.historial.forEach(r => {
-      csv += [r.fecha, r.entidad, r.ops, r.kneto, r.pp, r.interes, r.tna].map(esc).join(';') + '\n';
-    });
-  }
-
-  const mes = (data.mes||'mes').replace(/\s/g,'_');
-  const a = document.createElement('a');
-  a.href = 'data:text/csv;charset=utf-8,\uFEFF' + encodeURIComponent(csv);
-  a.download = 'Masele_' + mes + '.csv';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-}
-
-// Init
-document.getElementById('f-fecha').value = new Date().toISOString().slice(0,10);
-
-// Calcular días hábiles del mes actual al arrancar
-(function initDias() {
-  const hoy = new Date();
-  const { total, transcurridos } = calcDiasHabiles(hoy.getFullYear(), hoy.getMonth());
-  defaultData.diasHabiles = total;
-  defaultData.diasTranscurridos = transcurridos;
-  defaultData.mes = MESES_ES[hoy.getMonth()] + ' ' + hoy.getFullYear();
-})();
-
-if (window.localStorage) {
-  try {
-    const s = localStorage.getItem(STORE_KEY);
-    if (s) {
-      data = JSON.parse(s);
-      // Recalcular días hábiles por si cambió el día
-      const partes = (data.mes || '').split(' ');
-      const mesIdx = MESES_ES.indexOf(partes[0]);
-      const anio = parseInt(partes[1]);
-      if (mesIdx >= 0 && anio) {
-        const { total, transcurridos } = calcDiasHabiles(anio, mesIdx);
-        data.diasHabiles = total;
-        data.diasTranscurridos = transcurridos;
-      }
-    }
-  } catch(e) {}
-}
-render();
-
-// ===== IMPORTACIÓN DEL XLSX DEL SISTEMA =====
-// Mapeo de nombres del sistema a nombres del tablero
-const MAPEO_ENTIDADES = {
+const MAPEO = {
   'Asoc. Mutual de empleados de la Policia de Cordoba': 'Mut. Pol. Cba.',
   'Asociación Mut. del Sind. Único de Recolectores de': 'AMSURRBAC',
   'APL': 'APL',
@@ -754,153 +229,360 @@ const MAPEO_ENTIDADES = {
   'UNION DOCENTES AGREMIADOS PROVINCIALES': 'UDAP',
 };
 
-let pendingImport = null;
+const MESES_ES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
 
-function importarXLSX() {
-  const fileInput = document.getElementById('xlsx-file');
-  const msg = document.getElementById('csv-msg');
-  if (!fileInput.files.length) { msg.innerHTML = '<span class="danger">Seleccioná un archivo primero.</span>'; return; }
-  
-  const file = fileInput.files[0];
-  const reader = new FileReader();
-  reader.onload = function(e) {
-    try {
-      const wb = XLSX.read(e.target.result, { type: 'array', cellDates: true });
-      const ws = wb.Sheets[wb.SheetNames[0]];
-      const rows = XLSX.utils.sheet_to_json(ws, { defval: null });
-      
-      if (!rows.length) { msg.innerHTML = '<span class="danger">El archivo está vacío.</span>'; return; }
-      
-      // Detectar columnas disponibles
-      const firstRow = rows[0];
-      const cols = Object.keys(firstRow);
-      
-      // Verificar columnas requeridas
-      const reqCols = ['Entidad', 'Neto'];
-      const missing = reqCols.filter(c => !cols.includes(c));
-      if (missing.length) { msg.innerHTML = `<span class="danger">Columnas faltantes: ${missing.join(', ')}. Asegurate de usar el archivo Document.xlsx del sistema.</span>`; return; }
-      
-      // Agrupar por entidad
-      const resumen = {};
-      const sinMapeo = new Set();
-      let totalOps = 0;
-      
-      rows.forEach(row => {
-        const entSistema = row['Entidad'];
-        const entTabl = MAPEO_ENTIDADES[entSistema];
-        if (!entTabl) { sinMapeo.add(entSistema); return; }
-        if (!resumen[entTabl]) resumen[entTabl] = { ops: 0, neto: 0, interes: 0, plazo_sum: 0, neto_tna: 0, neto_plazo: 0 };
-        const neto = parseFloat(row['Neto']) || 0;
-        const interes = parseFloat(row['Interés']) || 0;
-        const plazo = parseFloat(row['Plazo']) || 0;
-        const tna = parseFloat(row['Tasa (%)']) || 0;
-        resumen[entTabl].ops += 1;
-        resumen[entTabl].neto += neto;
-        resumen[entTabl].interes += interes;
-        resumen[entTabl].plazo_sum += plazo;
-        resumen[entTabl].neto_tna += neto * tna;
-        resumen[entTabl].neto_plazo += neto * plazo;
-        totalOps++;
-      });
-      
-      // Detectar fecha del archivo
-      const fechaOverride = document.getElementById('csv-fecha-override').value;
-      let fechaDetectada = fechaOverride;
-      if (!fechaDetectada) {
-        const fechasOp = rows.map(r => r['F. Operación']).filter(Boolean);
-        if (fechasOp.length) {
-          const maxFecha = fechasOp.reduce((a, b) => {
-            const da = a instanceof Date ? a : new Date(a);
-            const db = b instanceof Date ? b : new Date(b);
-            return da > db ? a : b;
-          });
-          const d = maxFecha instanceof Date ? maxFecha : new Date(maxFecha);
-          fechaDetectada = d.toISOString().slice(0, 10);
-        } else {
-          fechaDetectada = new Date().toISOString().slice(0, 10);
-        }
-      }
-      
-      // Construir filas de previsualización
-      const previewRows = Object.entries(resumen).map(([ent, v]) => {
-        const pp = v.ops ? Math.round(v.plazo_sum / v.ops) : 0;
-        const tna = v.neto ? Math.round(v.neto_tna / v.neto) : 0;
-        return { entidad: ent, ops: v.ops, neto: v.neto, pp, tna, interes: v.interes };
-      });
-      
-      pendingImport = { resumen, fecha: fechaDetectada, previewRows, sinMapeo: [...sinMapeo] };
-      
-      // Mostrar preview
-      const head = document.getElementById('csv-preview-head');
-      head.innerHTML = ['Entidad','Operaciones','K neto','PP','TNA','Interés s/IVA'].map(h => `<th style="text-align:${h==='Entidad'?'left':'right'};padding:7px 10px;background:#f8f8f6;border-bottom:1px solid #e0e0d8;font-size:11px;font-weight:600;color:#555;text-transform:uppercase">${h}</th>`).join('');
-      document.getElementById('csv-preview-body').innerHTML = previewRows.map(r =>
-        `<tr style="border-bottom:1px solid #f0f0e8">
-          <td style="text-align:left;padding:6px 10px;font-weight:500">${r.entidad}</td>
-          <td style="text-align:right;padding:6px 10px">${r.ops}</td>
-          <td style="text-align:right;padding:6px 10px">${fmt(r.neto)}</td>
-          <td style="text-align:right;padding:6px 10px">${r.pp}</td>
-          <td style="text-align:right;padding:6px 10px">${r.tna}%</td>
-          <td style="text-align:right;padding:6px 10px">${fmt(r.interes)}</td>
-        </tr>`
-      ).join('');
-      
-      document.getElementById('csv-preview').style.display = 'block';
-      
-      let msgTxt = `<span class="success">✓ Archivo leído: ${totalOps} operaciones en ${previewRows.length} entidades. Fecha detectada: <b>${fechaDetectada}</b>.</span>`;
-      if (sinMapeo.length) msgTxt += ` <span class="warn"> · ${sinMapeo.length} entidad(es) sin mapeo: ${sinMapeo.slice(0,3).join(', ')}${sinMapeo.length>3?'...':''}</span>`;
-      msg.innerHTML = msgTxt;
-      
-    } catch(err) {
-      msg.innerHTML = `<span class="danger">Error al leer el archivo: ${err.message}</span>`;
-    }
-  };
-  reader.readAsArrayBuffer(file);
-}
+const FERIADOS = {
+  2025: ['2025-01-01','2025-03-03','2025-03-04','2025-03-24','2025-04-02','2025-04-18','2025-05-01','2025-05-25','2025-06-16','2025-06-20','2025-07-09','2025-08-18','2025-10-12','2025-11-21','2025-12-08','2025-12-25'],
+  2026: ['2026-01-01','2026-02-16','2026-02-17','2026-03-23','2026-03-24','2026-04-02','2026-04-03','2026-05-01','2026-05-25','2026-06-15','2026-06-20','2026-07-09','2026-07-10','2026-08-17','2026-10-12','2026-11-23','2026-12-07','2026-12-08','2026-12-25']
+};
 
-function confirmarImportacion() {
-  if (!pendingImport) return;
-  const { resumen, fecha, previewRows } = pendingImport;
-  const modo = document.getElementById('csv-modo').value;
-  
-  if (modo === 'reemplazar') {
-    // Limpiar datos reales actuales
-    data.entidades.forEach(e => { e.ops = 0; e.kneto = 0; e.interes = 0; e.pp = 0; e.tna = 0; });
-    data.historial = [];
+// Config guardada localmente (PE, objetivos, mes)
+let cfg = {
+  mes: 5, anio: 2026,
+  objPropio: 140000000, objPropioReal: 97200000,
+  entidades: [
+    {nombre:'APL', peOps:144, peMonto:100000000},
+    {nombre:'S.U.E', peOps:200, peMonto:50000000},
+    {nombre:'AMSURRBAC', peOps:131, peMonto:150000000},
+    {nombre:'UEJ', peOps:160, peMonto:50000000},
+    {nombre:'UDAP', peOps:0, peMonto:0},
+    {nombre:'30 de Octubre', peOps:0, peMonto:0},
+    {nombre:'3 de Abril', peOps:29, peMonto:30000000},
+    {nombre:'Mut. Pol. Cba.', peOps:255, peMonto:370000000},
+  ]
+};
+
+// Datos calculados desde la Sheet
+let sheetData = [];
+let chartInst = null, chartMode = 'diario';
+
+// ===== UTILS =====
+function fmt(n) { if(!n&&n!==0)return'—'; return'$'+Math.round(n).toLocaleString('es-AR'); }
+function fmtN(n) { return (n||0).toLocaleString('es-AR'); }
+function pct(a,b) { if(!b)return null; return Math.round(a/b*100); }
+function pilCls(p) { if(p===null)return''; if(p>=100)return'pct-ok'; if(p>=80)return'pct-warn'; return'pct-bad'; }
+
+// ===== DÍAS HÁBILES =====
+function calcDiasHabiles(anio, mes) {
+  const feriados = new Set((FERIADOS[anio]||[]).filter(f => {
+    const d = new Date(f+'T12:00:00');
+    return d.getFullYear()===anio && d.getMonth()===mes;
+  }));
+  const hoy = new Date();
+  const ayer = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate()-1);
+  let total=0, transcurridos=0;
+  const diasEnMes = new Date(anio, mes+1, 0).getDate();
+  for(let d=1; d<=diasEnMes; d++){
+    const fecha = new Date(anio, mes, d);
+    const dow = fecha.getDay();
+    if(dow===0||dow===6) continue;
+    const iso = `${anio}-${String(mes+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    if(feriados.has(iso)) continue;
+    total++;
+    if(fecha<=ayer) transcurridos++;
   }
-  
-  // Aplicar datos
-  Object.entries(resumen).forEach(([entNombre, v]) => {
-    const idx = data.entidades.findIndex(e => e.nombre === entNombre);
-    const pp = v.ops ? Math.round(v.plazo_sum / v.ops) : 0;
-    const tna = v.neto ? Math.round(v.neto_tna / v.neto) : 0;
-    if (idx >= 0) {
-      const e = data.entidades[idx];
-      const totalOps = e.ops + v.ops;
-      if (pp && totalOps) e.pp = Math.round((e.pp * e.ops + pp * v.ops) / totalOps);
-      e.ops += v.ops;
-      e.kneto += v.neto;
-      e.interes += v.interes;
-      if (tna) e.tna = tna;
-      e.neto_tna = (e.neto_tna || 0) + v.neto_tna;
-      e.neto_plazo = (e.neto_plazo || 0) + v.neto_plazo;
-    }
-    if (!data.historial) data.historial = [];
-    data.historial.push({ fecha, entidad: entNombre, ops: v.ops, kneto: v.neto, pp, interes: v.interes, tna });
-  });
-  
-  document.getElementById('csv-preview').style.display = 'none';
-  document.getElementById('csv-msg').innerHTML = `<span class="success">✓ ${previewRows.length} entidades importadas (${fecha}). Datos actualizados.</span>`;
-  document.getElementById('xlsx-file').value = '';
-  pendingImport = null;
-  saveData(); render();
-  setTimeout(() => switchTab('tabla'), 1200);
+  return {total, transcurridos};
 }
 
-function cancelarImportacion() {
-  pendingImport = null;
-  document.getElementById('csv-preview').style.display = 'none';
-  document.getElementById('csv-msg').textContent = '';
+function previsualizarDias() {
+  const mes = +document.getElementById('cfg-mes-num').value;
+  const anio = +document.getElementById('cfg-anio').value;
+  const {total, transcurridos} = calcDiasHabiles(anio, mes);
+  document.getElementById('dias-hab-info').innerHTML =
+    `<b>${MESES_ES[mes]} ${anio}</b> — Días hábiles: <b>${total}</b> totales · <b>${transcurridos}</b> transcurridos · <b>${total-transcurridos}</b> restantes`;
 }
+
+// ===== CARGAR DESDE GOOGLE SHEETS =====
+async function cargarDatos() {
+  document.getElementById('ultima-act').textContent = 'Actualizando...';
+  const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(SHEET_NAME)}`;
+  try {
+    const res = await fetch(url);
+    const text = await res.text();
+    // Google devuelve JSON envuelto en callback
+    const json = JSON.parse(text.match(/google\.visualization\.Query\.setResponse\(([\s\S]*)\)/)[1]);
+    const rows = json.table.rows;
+    const cols = json.table.cols.map(c => c.label);
+
+    // Detectar índices de columnas
+    const iEnt   = cols.findIndex(c => c.toLowerCase().includes('entidad'));
+    const iNeto  = cols.findIndex(c => c.toLowerCase().includes('neto'));
+    const iTasa  = cols.findIndex(c => c.toLowerCase() === 'tasa (%)' || c.toLowerCase().includes('tasa'));
+    const iPlazo = cols.findIndex(c => c.toLowerCase().includes('plazo'));
+    const iInt   = cols.findIndex(c => c.toLowerCase().includes('inter'));
+    const iFecha = cols.findIndex(c => c.toLowerCase().includes('operaci') || c.toLowerCase().includes('fecha'));
+
+    if(iEnt<0 || iNeto<0) {
+      mostrarError('No se encontraron las columnas "Entidad" y "Neto" en la Sheet. Verificá los encabezados.');
+      return;
+    }
+
+    sheetData = rows.map(r => ({
+      entidad: r.c[iEnt]?.v || '',
+      neto:    parseFloat(r.c[iNeto]?.v) || 0,
+      tasa:    iTasa>=0  ? parseFloat(r.c[iTasa]?.v)  || 0 : 0,
+      plazo:   iPlazo>=0 ? parseFloat(r.c[iPlazo]?.v) || 0 : 0,
+      interes: iInt>=0   ? parseFloat(r.c[iInt]?.v)   || 0 : 0,
+      fecha:   iFecha>=0 ? (r.c[iFecha]?.v || '') : '',
+    })).filter(r => r.entidad && r.neto > 0);
+
+    const ahora = new Date();
+    document.getElementById('ultima-act').textContent = `Actualizado: ${ahora.getHours()}:${String(ahora.getMinutes()).padStart(2,'0')}`;
+    render();
+  } catch(e) {
+    mostrarError('Error al leer la Google Sheet. Verificá que esté compartida como pública. (' + e.message + ')');
+  }
+}
+
+function mostrarError(msg) {
+  document.getElementById('kpi-row').innerHTML = `<div class="error-box">${msg}</div>`;
+  document.getElementById('ultima-act').textContent = 'Error al cargar';
+}
+
+// ===== CALCULAR TOTALES DESDE SHEET =====
+function calcularEntidades() {
+  const {total: diasTotal, transcurridos: diasTrans} = calcDiasHabiles(cfg.anio, cfg.mes);
+  const result = {};
+
+  sheetData.forEach(row => {
+    const nombre = MAPEO[row.entidad] || row.entidad;
+    if(!result[nombre]) result[nombre] = {ops:0, kneto:0, interes:0, neto_tna:0, neto_plazo:0};
+    result[nombre].ops++;
+    result[nombre].kneto += row.neto;
+    result[nombre].interes += row.interes;
+    result[nombre].neto_tna += row.neto * row.tasa;
+    result[nombre].neto_plazo += row.neto * row.plazo;
+  });
+
+  // Combinar con PE de config
+  const entidades = cfg.entidades.map(e => {
+    const r = result[e.nombre] || {ops:0, kneto:0, interes:0, neto_tna:0, neto_plazo:0};
+    const pp = r.kneto ? Math.round(r.neto_plazo / r.kneto) : 0;
+    const tna = r.kneto ? Math.round(r.neto_tna / r.kneto) : 0;
+    return {...e, ...r, pp, tna};
+  });
+
+  // Agregar entidades de la sheet que no están en config
+  Object.keys(result).forEach(nombre => {
+    if(!entidades.find(e => e.nombre===nombre)) {
+      const r = result[nombre];
+      entidades.push({nombre, peOps:0, peMonto:0, ...r, pp: r.kneto?Math.round(r.neto_plazo/r.kneto):0, tna: r.kneto?Math.round(r.neto_tna/r.kneto):0});
+    }
+  });
+
+  const tot = entidades.reduce((a,e) => ({
+    peOps: a.peOps+e.peOps, peMonto: a.peMonto+e.peMonto,
+    ops: a.ops+e.ops, kneto: a.kneto+e.kneto, interes: a.interes+e.interes,
+    neto_tna: a.neto_tna+e.neto_tna, neto_plazo: a.neto_plazo+e.neto_plazo
+  }), {peOps:0,peMonto:0,ops:0,kneto:0,interes:0,neto_tna:0,neto_plazo:0});
+
+  return {entidades, tot, diasTotal, diasTrans};
+}
+
+// ===== RENDER =====
+function render() {
+  if(!sheetData.length) return;
+  const {entidades, tot, diasTotal, diasTrans} = calcularEntidades();
+  renderKPI(tot, diasTotal, diasTrans);
+  renderTabla(entidades, tot, diasTotal, diasTrans);
+  renderConfig();
+  if(document.getElementById('panel-grafico').classList.contains('active')) renderGrafico();
+}
+
+function renderKPI(tot, dias, trans) {
+  const av = pct(tot.kneto, tot.peMonto);
+  const tTNA = tot.kneto ? Math.round(tot.neto_tna/tot.kneto) : 0;
+  const tPP  = tot.kneto ? Math.round(tot.neto_plazo/tot.kneto) : 0;
+  const opAv = pct(cfg.objPropioReal, cfg.objPropio);
+  const kpis = [
+    {label:'Capital colocado', val:fmt(tot.kneto), sub:'Meta: '+fmt(tot.peMonto), cls:av>=100?'ok':av>=80?'warn':'danger'},
+    {label:'Operaciones', val:fmtN(tot.ops), sub:'Meta: '+fmtN(tot.peOps)+' ops', cls:''},
+    {label:'Cumplimiento general', val:av!==null?(av+'%'):'—', sub:trans+' de '+dias+' días hábiles', cls:av>=100?'ok':av>=80?'warn':'danger'},
+    {label:'TNA pond. s/IVA', val:tTNA+'%', sub:'Promedio ponderado', cls:''},
+    {label:'Plazo pond. (PP)', val:tPP+' cuotas', sub:'Ponderado por capital', cls:''},
+    {label:'Obj. equipo', val:fmt(cfg.objPropioReal), sub:'Meta: '+fmt(cfg.objPropio), cls:opAv>=100?'ok':opAv>=80?'warn':'danger'}
+  ];
+  document.getElementById('kpi-row').innerHTML = kpis.map(k =>
+    `<div class="kpi ${k.cls}"><div class="kpi-label">${k.label}</div><div class="kpi-value">${k.val}</div><div class="kpi-sub">${k.sub}</div></div>`
+  ).join('');
+  const b = document.getElementById('estado-badge');
+  const a = av||0;
+  b.textContent = a>=100?'Meta alcanzada':a>=80?('Avance '+a+'%'):('Rezagado '+a+'%');
+  b.style.cssText = a>=100?'background:#dcfce7;color:#166534':a>=80?'background:#fef9c3;color:#854d0e':'background:#fee2e2;color:#991b1b';
+  document.getElementById('fecha-display').textContent = MESES_ES[cfg.mes]+' '+cfg.anio+' · Seguimiento diario';
+}
+
+function renderTabla(entidades, tot, dias, trans) {
+  let rows = '';
+  entidades.forEach(e => {
+    const ticket = e.ops ? Math.round(e.kneto/e.ops) : 0;
+    const av = pct(e.kneto, e.peMonto);
+    const pctP = tot.kneto ? Math.round(e.kneto/tot.kneto*100) : 0;
+    const proy = trans ? Math.round((e.kneto/trans)*dias) : 0;
+    rows += `<tr>
+      <td>${e.nombre}</td><td>${e.peOps||'—'}</td><td>${e.peMonto?fmt(e.peMonto):'$0'}</td>
+      <td>${e.ops}</td><td>${fmt(e.kneto)}</td><td>${pctP}%</td>
+      <td>${ticket?fmt(ticket):'—'}</td><td>${e.pp||'—'}</td>
+      <td>${fmt(e.interes)}</td><td>${e.tna?e.tna+'%':'—'}</td>
+      <td>${av!==null?`<span class="pct-pill ${pilCls(av)}">${av}%</span>`:'<span style="color:#aaa">—</span>'}</td>
+      <td>${trans?fmt(proy):'—'}</td>
+    </tr>`;
+  });
+  const tTNA  = tot.kneto ? Math.round(tot.neto_tna/tot.kneto) : 0;
+  const tPP   = tot.kneto ? Math.round(tot.neto_plazo/tot.kneto) : 0;
+  const tProy = trans ? Math.round((tot.kneto/trans)*dias) : 0;
+  const tAv   = pct(tot.kneto, tot.peMonto);
+  rows += `<tr class="total-row">
+    <td>Total</td><td>${tot.peOps}</td><td>${fmt(tot.peMonto)}</td>
+    <td>${tot.ops}</td><td>${fmt(tot.kneto)}</td><td>100%</td>
+    <td>${fmt(tot.ops?Math.round(tot.kneto/tot.ops):0)}</td><td>${tPP}</td>
+    <td>${fmt(tot.interes)}</td><td>${tTNA}%</td>
+    <td>${tAv!==null?`<span class="pct-pill ${pilCls(tAv)}">${tAv}%</span>`:'—'}</td>
+    <td>${fmt(tProy)}</td>
+  </tr>`;
+  document.getElementById('table-body').innerHTML = rows;
+
+  const esp = dias ? Math.round(tot.peMonto/dias) : 0;
+  const real = trans ? Math.round(tot.kneto/trans) : 0;
+  const cp = pct(real, esp);
+  document.getElementById('col-diaria-real').textContent = fmt(real);
+  document.getElementById('col-diaria-esp').textContent = fmt(esp);
+  const cpEl = document.getElementById('col-diaria-pct');
+  cpEl.textContent = cp!==null?(cp+'% vs esperado'):'';
+  cpEl.className = cp>=100?'success':cp>=80?'warn':'danger';
+
+  const op = pct(cfg.objPropioReal, cfg.objPropio);
+  document.getElementById('obj-propio-real').textContent = fmt(cfg.objPropioReal);
+  document.getElementById('obj-propio-meta').textContent = fmt(cfg.objPropio);
+  document.getElementById('obj-real-input').value = cfg.objPropioReal||'';
+  const opEl = document.getElementById('obj-propio-pct');
+  opEl.textContent = op!==null?(op+'% alcanzado'):'';
+  opEl.className = op>=100?'success':op>=80?'warn':'danger';
+}
+
+function renderGrafico() {
+  if(!window.Chart || !sheetData.length) return;
+  const ctx = document.getElementById('chart-main').getContext('2d');
+  if(chartInst){chartInst.destroy();chartInst=null;}
+
+  if(chartMode==='diario') {
+    const byF = {};
+    sheetData.forEach(r => {
+      const f = r.fecha ? String(r.fecha).slice(0,10) : 'Sin fecha';
+      byF[f] = (byF[f]||0) + r.neto;
+    });
+    const labels = Object.keys(byF).sort();
+    chartInst = new Chart(ctx, {type:'bar', data:{labels, datasets:[{label:'Capital (M$)', data:labels.map(l=>Math.round(byF[l]/1000000*100)/100), backgroundColor:'#2a78d6', borderRadius:4}]}, options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{y:{ticks:{callback:v=>'$'+v+'M'}}}}});
+  } else if(chartMode==='acumulado') {
+    const byF = {};
+    sheetData.forEach(r => { const f = r.fecha?String(r.fecha).slice(0,10):'Sin fecha'; byF[f]=(byF[f]||0)+r.neto; });
+    const labels = Object.keys(byF).sort(); let acc=0;
+    const {tot} = calcularEntidades(); const meta = tot.peMonto/1000000;
+    chartInst = new Chart(ctx, {type:'line', data:{labels, datasets:[
+      {label:'Acumulado (M$)', data:labels.map(l=>{acc+=byF[l];return Math.round(acc/1000000*100)/100;}), borderColor:'#2a78d6', backgroundColor:'rgba(42,120,214,0.08)', borderWidth:2, tension:0.3, pointRadius:4},
+      {label:'Meta (M$)', data:labels.map(()=>Math.round(meta*100)/100), borderColor:'#dc2626', borderDash:[5,4], borderWidth:1.5, pointRadius:0}
+    ]}, options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:true, labels:{boxWidth:10, font:{size:11}}}}, scales:{y:{ticks:{callback:v=>'$'+v+'M'}}}}});
+  } else {
+    const byE = {};
+    sheetData.forEach(r => { const n=MAPEO[r.entidad]||r.entidad; byE[n]=(byE[n]||0)+r.neto; });
+    const labels = Object.keys(byE);
+    const colors = ['#2a78d6','#1baf7a','#eda100','#008300','#4a3aa7','#e34948','#e87ba4','#eb6834'];
+    chartInst = new Chart(ctx, {type:'bar', data:{labels, datasets:[{label:'Capital (M$)', data:labels.map(l=>Math.round(byE[l]/1000000*100)/100), backgroundColor:labels.map((_,i)=>colors[i%colors.length]), borderRadius:4}]}, options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{y:{ticks:{callback:v=>'$'+v+'M'}}}}});
+  }
+}
+
+function switchChart(mode, el) {
+  chartMode = mode;
+  document.querySelectorAll('.chart-tab').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  renderGrafico();
+}
+
+function renderConfig() {
+  document.getElementById('config-body').innerHTML = cfg.entidades.map((e,i) => `<tr>
+    <td style="border:1px solid #e0e0d8;padding:5px 8px"><input type="text" value="${e.nombre}" onchange="cfg.entidades[${i}].nombre=this.value" style="width:130px;font-size:12px;padding:4px 6px;border:1px solid #d0d0c8;border-radius:4px;font-family:inherit"></td>
+    <td style="border:1px solid #e0e0d8;padding:5px 8px;text-align:right"><input type="number" value="${e.peOps}" onchange="cfg.entidades[${i}].peOps=+this.value" style="width:70px;font-size:12px;padding:4px 6px;border:1px solid #d0d0c8;border-radius:4px;font-family:inherit;text-align:right"></td>
+    <td style="border:1px solid #e0e0d8;padding:5px 8px;text-align:right"><input type="number" value="${e.peMonto}" onchange="cfg.entidades[${i}].peMonto=+this.value" style="width:130px;font-size:12px;padding:4px 6px;border:1px solid #d0d0c8;border-radius:4px;font-family:inherit;text-align:right"></td>
+    <td style="border:1px solid #e0e0d8;padding:5px 8px"><button class="btn-danger-sm" onclick="cfg.entidades.splice(${i},1);guardarCfg();renderConfig()">✕</button></td>
+  </tr>`).join('');
+  document.getElementById('cfg-mes-num').value = cfg.mes;
+  document.getElementById('cfg-anio').value = cfg.anio;
+  document.getElementById('cfg-obj-propio').value = cfg.objPropio;
+  document.getElementById('cfg-obj-real-cfg').value = cfg.objPropioReal;
+  previsualizarDias();
+}
+
+function agregarEntidad() {
+  cfg.entidades.push({nombre:'Nueva entidad', peOps:0, peMonto:0});
+  guardarCfg(); renderConfig();
+}
+
+function guardarConfig() {
+  cfg.mes = +document.getElementById('cfg-mes-num').value;
+  cfg.anio = +document.getElementById('cfg-anio').value;
+  cfg.objPropio = +document.getElementById('cfg-obj-propio').value||0;
+  cfg.objPropioReal = +document.getElementById('cfg-obj-real-cfg').value||0;
+  guardarCfg(); render(); switchTab('tabla');
+}
+
+function actualizarObjReal() {
+  const val = +document.getElementById('obj-real-input').value;
+  if(!val&&val!==0) return;
+  cfg.objPropioReal = val;
+  guardarCfg(); render();
+}
+
+function guardarCfg() {
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(cfg)); } catch(e){}
+}
+
+function switchTab(t) {
+  const tabs = ['tabla','grafico','config'];
+  document.querySelectorAll('.tab').forEach((b,i)=>b.classList.toggle('active',tabs[i]===t));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('panel-'+t).classList.add('active');
+  if(t==='grafico') renderGrafico();
+}
+
+// ===== EXPORTAR CSV =====
+function exportarCSV() {
+  if(!sheetData.length) { alert('No hay datos cargados.'); return; }
+  const {entidades, tot, diasTotal, diasTrans} = calcularEntidades();
+  const cols = ['Entidad','PE #','PE $','Real #','K neto','% Part.','Ticket prom.','PP','Interés s/IVA','TNA','Cumplimiento','Proyección'];
+  const esc = v => '"'+String(v==null?'':v).replace(/"/g,'""')+'"';
+  let csv = cols.map(esc).join(';')+'\n';
+  entidades.forEach(e => {
+    const ticket = e.ops?Math.round(e.kneto/e.ops):0;
+    const av = pct(e.kneto,e.peMonto);
+    const pctP = tot.kneto?Math.round(e.kneto/tot.kneto*100):0;
+    const proy = diasTrans?Math.round((e.kneto/diasTrans)*diasTotal):0;
+    csv += [e.nombre,e.peOps||0,e.peMonto||0,e.ops||0,e.kneto||0,pctP+'%',ticket||0,e.pp||0,e.interes||0,(e.tna||0)+'%',av!==null?(av+'%'):'',proy||0].map(esc).join(';')+'\n';
+  });
+  const tTNA=tot.kneto?Math.round(tot.neto_tna/tot.kneto):0;
+  const tPP=tot.kneto?Math.round(tot.neto_plazo/tot.kneto):0;
+  const tProy=diasTrans?Math.round((tot.kneto/diasTrans)*diasTotal):0;
+  const tAv=pct(tot.kneto,tot.peMonto);
+  csv += ['TOTAL',tot.peOps,tot.peMonto,tot.ops,tot.kneto,'100%',tot.ops?Math.round(tot.kneto/tot.ops):0,tPP,tot.interes,tTNA+'%',tAv!==null?(tAv+'%'):'',tProy].map(esc).join(';')+'\n';
+  csv += '\n';
+  csv += [esc('Objetivo propio — meta'),'','','','',esc(cfg.objPropio)].join(';')+'\n';
+  csv += [esc('Objetivo propio — real'),'','','','',esc(cfg.objPropioReal)].join(';')+'\n';
+  const pctObj=cfg.objPropio?Math.round(cfg.objPropioReal/cfg.objPropio*100):0;
+  csv += [esc('Objetivo propio — %'),'','','','',esc(pctObj+'%')].join(';')+'\n';
+  const mes = MESES_ES[cfg.mes]+'_'+cfg.anio;
+  const a = document.createElement('a');
+  a.href = 'data:text/csv;charset=utf-8,\uFEFF'+encodeURIComponent(csv);
+  a.download = 'Masele_'+mes+'.csv';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+}
+
+// ===== INIT =====
+try {
+  const s = localStorage.getItem(STORE_KEY);
+  if(s) cfg = {...cfg, ...JSON.parse(s)};
+} catch(e){}
+
+renderConfig();
+cargarDatos();
 </script>
 </body>
 </html>
