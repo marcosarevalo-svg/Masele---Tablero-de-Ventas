@@ -607,12 +607,12 @@ function exportarCSV() {
 
 // ===== IMPORTAR DESDE DRIVE VIA SCRIPT =====
 async function procesarDesdeDrive() {
-  document.getElementById('ultima-act').textContent = 'Procesando...';
-  // Abrir el script en una pestaña nueva — evita bloqueos CORS
-  window.open(SCRIPT_URL, '_blank');
-  // Esperar y recargar datos
-  document.getElementById('ultima-act').textContent = 'Actualizando en 8 segundos...';
-  setTimeout(() => cargarDatos(), 8000);
+  // Abre el Script en nueva pestaña — lo ejecuta directamente en el servidor de Google
+  const win = window.open(SCRIPT_URL + '?t=' + Date.now(), '_blank');
+  document.getElementById('ultima-act').textContent = 'Procesando... actualizando en 10s';
+  // Cerrar la pestaña del script después de 3 segundos y recargar datos
+  setTimeout(() => { try { win.close(); } catch(e){} }, 3000);
+  setTimeout(() => cargarDatos(), 10000);
 }
 
 
