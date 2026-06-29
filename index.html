@@ -408,7 +408,6 @@ function calcularEntidades() {
     const {transcurridos} = calcDiasHabilesHasta(cfg.anio, cfg.mes, fechaMaxDatos);
     diasTransEfectivos = transcurridos;
   }
-  const result = {};
 
   sheetData.forEach(row => {
     const nombre = MAPEO[row.entidad] || row.entidad;
