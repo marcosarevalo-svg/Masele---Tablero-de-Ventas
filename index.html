@@ -301,7 +301,7 @@ const FERIADOS = {
 
 // Config guardada localmente (PE, objetivos, mes)
 let cfg = {
-  mes: 5, anio: 2026,
+  mes: 6, anio: 2026,
   objPropio: 140000000, objPropioReal: 97200000,
   entidades: [
     {nombre:'APL', peOps:144, peMonto:100000000},
@@ -384,6 +384,8 @@ async function cargarConfig() {
     if(json.ok && json.config) {
       if(json.config.objPropio)     cfg.objPropio     = +json.config.objPropio;
       if(json.config.objPropioReal) cfg.objPropioReal = +json.config.objPropioReal;
+      if(json.config.mes  !== undefined) cfg.mes  = +json.config.mes;
+      if(json.config.anio !== undefined) cfg.anio = +json.config.anio;
     }
   } catch(e) {}
 }
@@ -785,18 +787,15 @@ function guardarConfig() {
   cfg.objPropio = +document.getElementById('cfg-obj-propio').value||0;
   cfg.objPropioReal = +document.getElementById('cfg-obj-real-cfg').value||0;
   guardarCfg();
-  // Guardar objetivos en Sheet
-  fetch(SCRIPT_URL, {
-    method: 'POST',
-    body: JSON.stringify({action: 'setConfig', clave: 'objPropio', valor: cfg.objPropio}),
-    headers: {'Content-Type': 'application/json'},
-    mode: 'no-cors'
-  });
-  fetch(SCRIPT_URL, {
-    method: 'POST',
-    body: JSON.stringify({action: 'setConfig', clave: 'objPropioReal', valor: cfg.objPropioReal}),
-    headers: {'Content-Type': 'application/json'},
-    mode: 'no-cors'
+  // Guardar todo en Sheet
+  const vals = {objPropio: cfg.objPropio, objPropioReal: cfg.objPropioReal, mes: cfg.mes, anio: cfg.anio};
+  Object.entries(vals).forEach(([clave, valor]) => {
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify({action: 'setConfig', clave, valor}),
+      headers: {'Content-Type': 'application/json'},
+      mode: 'no-cors'
+    });
   });
   render(); switchTab('tabla');
 }
