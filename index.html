@@ -398,7 +398,7 @@ async function cargarDatos() {
     const text = await res.text();
     // Google devuelve JSON envuelto en callback
     const json = JSON.parse(text.match(/google\.visualization\.Query\.setResponse\(([\s\S]*)\)/)[1]);
-    const rows = json.table.rows;
+    const rows = json.table.rows || [];
     const cols = json.table.cols.map(c => c.label);
 
     // Detectar índices de columnas
