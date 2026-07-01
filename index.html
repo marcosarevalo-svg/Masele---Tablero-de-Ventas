@@ -343,6 +343,18 @@ function previsualizarDias() {
 }
 
 // ===== CARGAR DESDE GOOGLE SHEETS =====
+async function cargarConfig() {
+  try {
+    const url = SCRIPT_URL + '?action=getConfig&t=' + Date.now();
+    const res = await fetch(url);
+    const json = await res.json();
+    if(json.ok && json.config) {
+      if(json.config.objPropio)     cfg.objPropio     = +json.config.objPropio;
+      if(json.config.objPropioReal) cfg.objPropioReal = +json.config.objPropioReal;
+    }
+  } catch(e) {}
+}
+
 async function cargarDatos() {
   document.getElementById('ultima-act').textContent = 'Actualizando...';
   const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(SHEET_NAME)}`;
@@ -378,6 +390,7 @@ async function cargarDatos() {
 
     const ahora = new Date();
     document.getElementById('ultima-act').textContent = `Actualizado: ${ahora.getHours()}:${String(ahora.getMinutes()).padStart(2,'0')}`;
+    await cargarConfig();
     render();
   } catch(e) {
     mostrarError('Error al leer la Google Sheet. Verificá que esté compartida como pública. (' + e.message + ')');
@@ -398,15 +411,25 @@ function calcularEntidades() {
   let fechaMaxDatos = null;
   sheetData.forEach(row => {
     if (!row.fecha) return;
-    let f;
-    if (row.fecha instanceof Date) {
-      f = row.fecha;
-    } else if (typeof row.fecha === 'string' && row.fecha.startsWith('Date(')) {
-      // Formato Google Sheets: Date(2026,5,29)
-      const parts = row.fecha.replace('Date(','').replace(')','').split(',');
+    let f = null;
+    const fRaw = row.fecha;
+    if (fRaw instanceof Date) {
+      f = fRaw;
+    } else if (typeof fRaw === 'string' && fRaw.startsWith('Date(')) {
+      const parts = fRaw.replace('Date(','').replace(')','').split(',');
       f = new Date(+parts[0], +parts[1], +parts[2]);
+    } else if (typeof fRaw === 'string' && fRaw.includes('/')) {
+      // dd/mm/yyyy o mm/dd/yyyy
+      const parts = fRaw.split('/');
+      if (parts.length === 3) f = new Date(+parts[2], +parts[1]-1, +parts[0]);
+    } else if (typeof fRaw === 'string' && fRaw.includes('-')) {
+      // yyyy-mm-dd
+      f = new Date(fRaw + 'T12:00:00');
+    } else if (typeof fRaw === 'number') {
+      // Número serial de Excel/Sheets (días desde 1900-01-01)
+      f = new Date(Math.round((fRaw - 25569) * 86400 * 1000));
     } else {
-      f = new Date(row.fecha);
+      f = new Date(fRaw);
     }
     if (!isNaN(f) && (!fechaMaxDatos || f > fechaMaxDatos)) fechaMaxDatos = f;
   });
@@ -596,14 +619,36 @@ function guardarConfig() {
   cfg.anio = +document.getElementById('cfg-anio').value;
   cfg.objPropio = +document.getElementById('cfg-obj-propio').value||0;
   cfg.objPropioReal = +document.getElementById('cfg-obj-real-cfg').value||0;
-  guardarCfg(); render(); switchTab('tabla');
+  guardarCfg();
+  // Guardar objetivos en Sheet
+  fetch(SCRIPT_URL, {
+    method: 'POST',
+    body: JSON.stringify({action: 'setConfig', clave: 'objPropio', valor: cfg.objPropio}),
+    headers: {'Content-Type': 'application/json'},
+    mode: 'no-cors'
+  });
+  fetch(SCRIPT_URL, {
+    method: 'POST',
+    body: JSON.stringify({action: 'setConfig', clave: 'objPropioReal', valor: cfg.objPropioReal}),
+    headers: {'Content-Type': 'application/json'},
+    mode: 'no-cors'
+  });
+  render(); switchTab('tabla');
 }
 
 function actualizarObjReal() {
   const val = +document.getElementById('obj-real-input').value;
-  if(!val&&val!==0) return;
+  if(!val && val!==0) return;
   cfg.objPropioReal = val;
-  guardarCfg(); render();
+  guardarCfg();
+  // Guardar en Sheet via Script
+  fetch(SCRIPT_URL, {
+    method: 'POST',
+    body: JSON.stringify({action: 'setConfig', clave: 'objPropioReal', valor: val}),
+    headers: {'Content-Type': 'application/json'},
+    mode: 'no-cors'
+  });
+  render();
 }
 
 function guardarCfg() {
